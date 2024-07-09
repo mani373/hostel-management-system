@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumi Hostel Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, select {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Rumi Hostel Management System</h2>
+
+    <!-- Add Room Form -->
+    <form action="/add_room" method="post">
+        <h3>Add a Room</h3>
+        <label for="room_number">Room Number:</label>
+        <input type="text" id="room_number" name="room_number" required><br>
+        <label for="rent">Rent:</label>
+        <input type="text" id="rent" name="rent" required><br>
+        <label for="security">Security Deposit:</label>
+        <input type="text" id="security" name="security" required><br>
+        <button type="submit">Add Room</button>
+    </form>
+
+    <!-- Add Student Form -->
+    <form action="/add_student" method="post">
+        <h3>Add a Student</h3>
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required><br>
+        <label for="room_id">Room ID (Optional):</label>
+        <input type="text" id="room_id" name="room_id"><br>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <!-- Assign Student to Room Form -->
+    <form action="/assign_student" method="post">
+        <h3>Assign Student to Room</h3>
+        <label for="student_id">Student ID:</label>
+        <input type="text" id="student_id" name="student_id" required><br>
+        <label for="room_id_assign">Room ID:</label>
+        <input type="text" id="room_id_assign" name="room_id_assign" required><br>
+        <button type="submit">Assign Student</button>
+    </form>
+
+    <!-- Get Room Details Form -->
+    <form action="/get_room_details" method="get">
+        <h3>Get Room Details</h3>
+        <label for="room_id_details">Room ID:</label>
+        <input type="text" id="room_id_details" name="room_id_details" required><br>
+        <button type="submit">Get Room Details</button>
+    </form>
+
+    <!-- Get Student Details Form -->
+    <form action="/get_student_details" method="get">
+        <h3>Get Student Details</h3>
+        <label for="student_id_details">Student ID:</label>
+        <input type="text" id="student_id_details" name="student_id_details" required><br>
+        <button type="submit">Get Student Details</button>
+    </form>
+
+    <!-- Display Results -->
+    <div class="result">
+        <h3>Operation Result:</h3>
+        <p>{{ result }}</p>
+    </div>
+
+</body>
+</html>
+
+    
